@@ -1,6 +1,7 @@
-var  appVersion = 3
-	,packageName = 'com.gaeyou.dday'
-	
+/*
+link url = http://goo.gl/xwrAKo
+*/
+
 function onReady() {
 
 	/* DDAY 리스트 */
@@ -28,10 +29,7 @@ function onReady() {
 
 
 function initEvent() {
-	$('#panelUpdate').on('click', function(){
-		_oc.href('http://goo.gl/xwrAKo');
-	})
-	
+
 	$('#panelNew').on('click', function(){
 		var param = 'flag=new'
 		_oc.link('../content/add.html', param, 'DEFAULT', 'DEFAULT');
@@ -45,7 +43,7 @@ function initEvent() {
 		//_oc.link('../content/add.html', param, 'DEFAULT', 'DEFAULT');
 	})
 	$('#panelShare').on('click', function(){
-		alert('멋쟁이!!♥ ^.~')
+		alert('추천 감사합니다 ♥ ^.~\n카톡으로 링크하겠습니다.')
 		var  title = '모두의 디데이'
 			,text = '내가 태어난지 몇일이 지났는지 궁금하세요? \n디데이앱으로 확인해보세요.'
 		_oc.api.kakaotalk(title, text);
@@ -70,18 +68,6 @@ function initEvent() {
 	$('#btnNew').on('click', function(){
 		var param = 'flag=new'
 		_oc.link('../content/add.html', param, 'DEFAULT', 'DEFAULT');
-	})
-	
-	var data = {}
-	data['version'] = appVersion
-	data['package_name'] = packageName
-	
-	request('dday_version_check', data, function(result){
-		if (result['result'] == 'success') {
-			$('#panelUpdate').css('display', 'none')
-		} else {
-			_oc.toast('최신 버전으로 업데이트하세요.', 'LONG');
-		}
 	})
 }
 
