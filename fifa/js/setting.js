@@ -21,6 +21,9 @@ function onReady() {
 
 // 세팅
 function initSetting() {
+	$('#btnFBPage').on('click', function(){
+		_oc.uri.facebook('357555101043476');
+	})
 	$('#bugReport').on('click', function(){
 		_oc.link('../setting/suggest.html', '', 'DEFAULT', 'DEFAULT');
 	})

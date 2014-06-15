@@ -173,6 +173,17 @@ var platform = 'web'
 			
 			}
 		}
+	},
+	
+	// uri
+	'uri': {
+		'facebook': function(id){
+			try{
+				window.openInterface.openFacebook('fb\:\/\/page\/'+id);
+			}catch(e){
+				window.open('https://www.facebook.com/'+id)
+			}
+		}
 	}
 }
 

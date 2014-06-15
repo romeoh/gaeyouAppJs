@@ -46,7 +46,6 @@ function initLeague() {
 				,str = ''
 			
 			rdata = arrageSchedule(rdata, true)
-			console.log(rdata)
 			for (var i in rdata) {
 				var  dateMem = rdata[i]
 					,titleDate = dateMem[0]['date']
