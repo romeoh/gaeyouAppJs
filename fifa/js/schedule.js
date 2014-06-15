@@ -83,7 +83,11 @@ function initLeague() {
 						str += '			<p class=""><span class="score">' + dateMem[j]['comment_count'] + '개</span>의 댓글</p>';
 					}
 					if (dateMem[j]['winner'] != '') {
-						str += '			<p class="result">' + dateMem[j]['winner'] + ' 승 (' + dateMem[j]['nation_score1'] + ':' + dateMem[j]['nation_score2'] + ')</p>';
+						if (dateMem[j]['nation_score1'] == dateMem[j]['nation_score2']) {
+							str += '			<p class="result">무승부 (' + dateMem[j]['nation_score1'] + ':' + dateMem[j]['nation_score2'] + ')</p>';
+						} else {
+							str += '			<p class="result">' + dateMem[j]['winner'] + ' 승 (' + dateMem[j]['nation_score1'] + ':' + dateMem[j]['nation_score2'] + ')</p>';
+						}
 					}
 					str += '		</li>';
 				}
