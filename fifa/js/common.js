@@ -144,8 +144,8 @@ function arrageSchedule(sch, flag) {
 	var  newSch = []
 		,newSchMember = []
 		,tumpDate
-
-	sch = sch.sort(comp);
+		
+	//sch = sch.sort(comp);
 	if (flag) {
 		sch = addToday(sch);
 	}
@@ -169,6 +169,21 @@ function arrageSchedule(sch, flag) {
 	}
 	return newSch;
 }
+
+// 날짜 정렬
+function comp(a, b) {
+	var  at = moment(a.date+'T'+a.time, 'YYYY-MM-DDTHH:mm:ss').format('YYYY/MM/DD HH:mm')
+		,bt = moment(b.date+'T'+a.time, 'YYYY-MM-DDTHH:mm:ss').format('YYYY/MM/DD HH:mm')
+		console.log(at, bt)
+	return new Date(at).getTime() - new Date(bt).getTime();
+}
+// 친구 가나다순 정렬
+function compStringReverse(a, b) {
+	if (a.friend_nickname > b.friend_nickname) return 1;
+	if (b.friend_nickname > a.friend_nickname) return -1;
+	return 0;
+}
+
 // 오늘 날짜 공백처리
 function addToday(sch) {
 	var  tday = parseTime(0)
@@ -193,20 +208,6 @@ function addToday(sch) {
 		returnSch.push({'dtstart': parseTime(7)})
 	}
 	return returnSch;
-}
-
-// 날짜 정렬
-function comp(a, b) {
-	var  at = moment(a.date+'T'+a.time, 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm')
-		,bt = moment(b.date+'T'+a.time, 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm')
-		//console.log(a.date+'T'+a.time, at)
-	//return new Date(at).getTime() - new Date(bt).getTime();
-}
-// 친구 가나다순 정렬
-function compStringReverse(a, b) {
-	if (a.friend_nickname > b.friend_nickname) return 1;
-	if (b.friend_nickname > a.friend_nickname) return -1;
-	return 0;
 }
 
 // 페이지 id
