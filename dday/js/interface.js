@@ -147,6 +147,15 @@ var platform = 'web'
 		}
 	},
 	
+	// 공유하기
+	'share': function(msg){
+		try{
+			window.openInterface.share(msg);
+		}catch(e){
+			console.log(msg);
+		}
+	},
+	
 	// API
 	'api': {
 		'kakaotalk': function(q, p){
@@ -162,6 +171,17 @@ var platform = 'web'
 				window.openInterface.kakaostory();
 			}catch(e){
 			
+			}
+		}
+	},
+	
+	// uri
+	'uri': {
+		'facebook': function(id){
+			try{
+				window.openInterface.openFacebook('fb\:\/\/page\/'+id);
+			}catch(e){
+				window.open('https://www.facebook.com/'+id)
 			}
 		}
 	}

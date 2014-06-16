@@ -43,10 +43,11 @@ function initEvent() {
 		//_oc.link('../content/add.html', param, 'DEFAULT', 'DEFAULT');
 	})
 	$('#panelShare').on('click', function(){
-		alert('추천 감사합니다 ♥ ^.~\n카톡으로 링크하겠습니다.')
-		var  title = '모두의 디데이'
-			,text = '내가 태어난지 몇일이 지났는지 궁금하세요? \n디데이앱으로 확인해보세요.'
-		_oc.api.kakaotalk(title, text);
+		var msg = '쉽고 편리한 모두의 디데이를 다운받아 보세요.\nhttps://play.google.com/store/apps/details?id=com.gaeyou.dday'
+		_oc.share(msg);
+	})
+	$('#panelFBPage').on('click', function(){
+		_oc.uri.facebook('357555101043476');
 	})
 	$('#appsWorldcup').on('click', function(){
 		_oc.href('http://goo.gl/NEphmg');
