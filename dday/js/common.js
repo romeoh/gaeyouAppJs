@@ -688,8 +688,8 @@ function calDay(d, option) {
 			next = 0;
 		// 년도 다름
 		} else {
-			next = moment(dday).diff(today, 'days');
-			last = moment(fullToday).diff(lastDay, 'days');
+			next = moment(fullDday).diff(today, 'days');
+			last = moment(fullToday).diff(fullDday, 'days');
 			lastDayStr = ''
 			nextDayStr = ''
 		}
