@@ -8,6 +8,7 @@ function onReady() {
 	if ($('#dList').length > 0) {
 		initEvent();
 		initList();
+		initFirstRun('moa.game');
 	}
 	
 	/* 새로운 디데이 */
@@ -622,7 +623,48 @@ function checkGetPublic(idx) {
 }
 
 
-
+// initFirstRun()
+function initFirstRun(app) {
+	if (!getSetting(app)) {
+		var str = '';
+		str += '<div class="modal-dialog">';
+		str += '	<div class="modal-content">';
+		str += '		<div class="modal-header">';
+		str += '			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+		str += '			<h4 class="modal-title" id="modalLabel">추천앱</h4>';
+		str += '		</div>';
+		str += '		<div class="modal-body" id="modalContent">';
+		
+		str += '<div class="form-group group-movie-input" style="text-align:center">';
+		str += '	<img src="http://romeoh.github.io/gaeyouAppJs/common/img/' + app + '.png" style="width:100%; margin-bottom:10px">';
+		str += '	<button type="button" class="btn btn-warning" id="btnDownload"><i class="fa fa-android"></i> 다운로드</button>';
+		str += '</div>';
+	
+		str += '</div>';
+		str += '		<div class="modal-footer">';
+		str += '			<button type="button" class="btn btn-default" id="btnCloseModal">닫기</button>';
+		str += '			<button type="button" class="btn btn-primary" id="btnModalSelect">다시보지 않음</button>';
+		str += '		</div>';
+		str += '	</div>';
+		str += '</div>';
+		
+		$('#modal').modal('show');
+		$('#modal').html(str);
+		
+		$('#btnModalSelect').on('click', function(){
+			setSetting(app, 'true')
+			hideModal();
+		})
+		
+		$('#btnCloseModal').on('click', function(){
+			hideModal();
+		})
+		$('#btnDownload').on('click', function(){
+			_oc.href('https://play.google.com/store/apps/details?id=com.gaeyou.' + app);
+		})
+	}
+	
+}
 
 
 
