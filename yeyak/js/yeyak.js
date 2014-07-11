@@ -992,6 +992,7 @@ function checkValid() {
 
 // 예약하기
 var resevationDate
+	,checkTwice = false
 function reservationListener() {
 	if (checkValid()) {
 		var  data = {}
@@ -1002,6 +1003,10 @@ function reservationListener() {
 		if ( !confirm('"' + accountInfo['story_nickname'] + '"님의 계정으로 ' + diff + "에 등록 예약하겠습니까?") ) {
 			return false;
 		}
+		if (checkTwice) {
+			return false;
+		}
+		checkTwice = true;
 		$('#btnReservation').off('click');
 		
 		data['user_idx'] = getSetting('user_idx');

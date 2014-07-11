@@ -623,6 +623,10 @@ function initReplyAdd() {
 			_oc.toast('댓글을 입력하세요.');
 			return false;
 		}
+		if (checkTwice) {
+			return false;
+		}
+		checkTwice = true;
 		$('#inputReply').html('');
 		
 		var data = {}
@@ -642,6 +646,7 @@ function cbPostYeyakCommentInsert(result) {
 		replyStart = 0;
 		$('#replayBox').html('');
 		getReplyList(1);
+		checkTwice = false
 	}
 }
 
