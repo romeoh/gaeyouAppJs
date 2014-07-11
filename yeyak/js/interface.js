@@ -87,14 +87,14 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	},
 	
 	// POST 통신
-	'sendPost': function(tr, data, callback) {
+	/*'sendPost': function(tr, data, callback) {
 		try{
 			data = JSON.stringify(data)
 			window.openInterface.sendPost(tr, data, callback);
 		}catch(e){
 			window[callback]();
 		}
-	},
+	},*/
 	
 	// 사진 불러오기
 	'getPhoto': function(tr, callback) {
