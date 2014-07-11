@@ -136,7 +136,7 @@ function cbPostYeyakContentList(result) {
 					,time = moment(rdata[i]['reservation_date'], dateFormat).lang('ko').format('A h:mm')
 					,condition = ''
 				
-				//console.log(rdata[i])
+				console.log(rdata[i])
 				if (rdata[i]['was_action'] == '1') {
 					condition = '<span class="reservation-complete"><i class="fa fa-check-circle-o"></i> 등록완료</span>'
 				} else if (rdata[i]['reservation_cancel'] == '1') {
@@ -147,8 +147,9 @@ function cbPostYeyakContentList(result) {
 				
 				// 오류처리
 				if (rdata[i]['was_action'] == '0') {
-					var isError = moment(rdata[i]['reservation_date']).isBefore()
-					condition = '<span style="color:#f00" class="reservation-error"><i class="fa fa-clock-o"></i> 등록오류</span>'
+					if (moment(rdata[i]['reservation_date']).diff() < 0) {
+						condition = '<span style="color:#f00" class="reservation-error"><i class="fa fa-clock-o"></i> 등록오류</span>'
+					}
 				}
 				
 				str += '<dd>';
@@ -482,6 +483,13 @@ function cbPostYeyakContentView(result) {
 			condition = '<span class="reservation-cancel"><i class="fa fa-ban"></i> 예약취소</span>'
 		} else {
 			condition = '<span class="reservation"><i class="fa fa-clock-o"></i> 예약됨</span>'
+		}
+		
+		// 오류처리
+		if (rdata['was_action'] == '0') {
+			if (moment(rdata['reservation_date']).diff() < 0) {
+				condition = '<span style="color:#f00" class="reservation-error"><i class="fa fa-clock-o"></i> 등록오류</span>'
+			}
 		}
 		$('#condition').html(condition)
 		$('#description').html(rdata['description'])
