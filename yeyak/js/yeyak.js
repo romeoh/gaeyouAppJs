@@ -150,7 +150,7 @@ function cbPostYeyakContentList(result) {
 				str += '<li data-idx="' + rdata[i]['idx'] + '">';
 				str += '	<div class="thumnail">';
 				str += '		<div class="profile">';
-				str += '			<img src="' + rdata[i]['story_profile'] + '">';
+				str += '			<img src="' + rdata[i]['story_profile'] + '" style="height:50px">';
 				str += '		</div> ';
 				str += '		<div class="story-nickname">' + decode(rdata[i]['story_nickname']) + '</div>';
 				str += '		<div class="story-date">' + date + ' ' + time + '</div>';
@@ -248,7 +248,7 @@ function cbPostYeyakContentTimeline(result) {
 				str += '<li data-idx="' + rdata[i]['idx'] + '">';
 				str += '	<div class="thumnail">';
 				str += '		<div class="profile">';
-				str += '			<img src="' + rdata[i]['story_profile'] + '">';
+				str += '			<img src="' + rdata[i]['story_profile'] + '" style="height:50px">';
 				str += '		</div> ';
 				str += '		<div class="story-nickname">' + decode(rdata[i]['story_nickname']) + '</div>';
 				str += '		<div class="story-date">' + date + ' ' + time + '</div>';
