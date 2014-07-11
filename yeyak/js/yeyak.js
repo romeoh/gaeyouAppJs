@@ -131,18 +131,24 @@ function cbPostYeyakContentList(result) {
 			
 			$('#count').html(rdata.length)
 			for (var i in rdata) {
-				console.log(rdata[i])
 				var  dateFormat = 'YYYY-MM-DD HH:mm:SS'
 					,date = moment(rdata[i]['reservation_date'], dateFormat).format('MM.DD')
 					,time = moment(rdata[i]['reservation_date'], dateFormat).lang('ko').format('A h:mm')
 					,condition = ''
 				
+				//console.log(rdata[i])
 				if (rdata[i]['was_action'] == '1') {
 					condition = '<span class="reservation-complete"><i class="fa fa-check-circle-o"></i> 등록완료</span>'
 				} else if (rdata[i]['reservation_cancel'] == '1') {
 					condition = '<span class="reservation-cancel"><i class="fa fa-ban"></i> 예약취소</span>'
 				} else {
 					condition = '<span class="reservation"><i class="fa fa-clock-o"></i> 예약됨</span>'
+				}
+				
+				// 오류처리
+				if (rdata[i]['was_action'] == '0') {
+					var isError = moment(rdata[i]['reservation_date']).isBefore()
+					condition = '<span style="color:#f00" class="reservation-error"><i class="fa fa-clock-o"></i> 등록오류</span>'
 				}
 				
 				str += '<dd>';
@@ -988,6 +994,7 @@ function reservationListener() {
 		if ( !confirm('"' + accountInfo['story_nickname'] + '"님의 계정으로 ' + diff + "에 등록 예약하겠습니까?") ) {
 			return false;
 		}
+		$('#btnReservation').off('click');
 		
 		data['user_idx'] = getSetting('user_idx');
 		data['account_idx'] = getSetting('account_idx');
