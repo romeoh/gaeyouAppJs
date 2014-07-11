@@ -593,8 +593,8 @@ function initReservation() {
 	})
 	
 	// 예약하기
-	$('#btnReservation').on('click', function(){
-		reservationListener();
+	$('#btnReservation').on('click', function(evt){
+		reservationListener(evt);
 	})
 }
 
@@ -751,7 +751,7 @@ function uploadListener() {
 }
 
 function cbYeyakImageUpload(result) {
-_oc.log(result)
+//_oc.log(result)
 	var rdata = result;
 	if (rdata['result']) {
 		if (rdata['result'] == 'error1') {
@@ -992,7 +992,8 @@ function checkValid() {
 
 // 예약하기
 var resevationDate
-function reservationListener() {
+function reservationListener(evt) {
+	console.log(evt.type)
 	if (checkValid()) {
 		var  data = {}
 			,inputDescription = removeTagAll($('#inputDescription').html())
@@ -1024,6 +1025,7 @@ function reservationListener() {
 		data['description'] = inputDescription
 		data['type'] = type;
 		data['permission'] = permission;	//'F'
+		data['event_type'] = evt.type;	//'F'
 		//console.log(data)
 		//return
 		if (getParam('idx')) {
