@@ -544,7 +544,7 @@ function cbPostYeyakCommentList(result) {
 				var regTime = fromNow(rdata[i]['reg_date'])
 				
 				str += '<li data-reply="' + rdata[i]['comment_idx'] + '">';
-				str += '		<p class="profile"><img src="' + rdata[i]['story_profile'] + '" style="height:50px"></p>';
+				str += '		<p class="profile"><img src="' + rdata[i]['story_profile'] + '" style="height:45px"></p>';
 				str += '	<div class="reply">';
 				
 				str += '		<p class="author">' + decode(rdata[i]['story_nickname']) + '</p>';
