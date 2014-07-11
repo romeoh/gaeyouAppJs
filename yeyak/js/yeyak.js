@@ -242,7 +242,7 @@ function cbPostYeyakContentTimeline(result) {
 		} else {
 			listStart = listStart + listTotal;
 			
-			$('#count').html(rdata.length)
+			$('#count').parent().css('display', 'none');
 			for (var i in rdata) {
 				console.log(rdata[i])
 				var  dateFormat = 'YYYY-MM-DD HH:mm:SS'
