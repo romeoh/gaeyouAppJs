@@ -992,8 +992,9 @@ function checkValid() {
 
 // 예약하기
 var resevationDate
+	,clickIdx = 0
 function reservationListener(evt) {
-	console.log(evt.type)
+	clickIdx++
 	if (checkValid()) {
 		var  data = {}
 			,inputDescription = removeTagAll($('#inputDescription').html())
@@ -1025,7 +1026,7 @@ function reservationListener(evt) {
 		data['description'] = inputDescription
 		data['type'] = type;
 		data['permission'] = permission;	//'F'
-		data['event_type'] = evt.type;	//'F'
+		data['event_type'] = clickIdx;	//'F'
 		//console.log(data)
 		//return
 		if (getParam('idx')) {
