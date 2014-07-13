@@ -129,7 +129,7 @@ function cbPostYeyakContentList(result) {
 		} else {
 			listStart = listStart + listTotal;
 			
-			$('#count').html(rdata.length)
+			$('#count').html(rdata[0]['total'])
 			for (var i in rdata) {
 				var  dateFormat = 'YYYY-MM-DD HH:mm:SS'
 					,date = moment(rdata[i]['reservation_date'], dateFormat).format('MM.DD')
