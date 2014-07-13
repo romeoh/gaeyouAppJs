@@ -381,10 +381,10 @@ function cbPostYeyakMemberAccountGet(result) {
 			data['permission'] = viewData['permission']
 			data['image'] = imgs
 			data['url'] = viewData['url']
-			data['reservation_date'] = moment().format('YYYY-MM-DD HH:mm:SS')
+			data['reservation_date'] = moment().format('YYYY-MM-DD HH:mm')
 			data['user_agent'] = window.navigator.userAgent
 			data['platform'] = platform
-			//console.log(data)
+			_oc.log(data['reservation_date'])
 			_oc.sendPost('yeyak_reservation', data, 'cbPostYeyakContentInsert');
 		}
 	}
@@ -392,6 +392,7 @@ function cbPostYeyakMemberAccountGet(result) {
 
 // 퍼가기 등록
 function cbPostYeyakContentInsert(result) {
+	_oc.log("cbPostYeyakContentInsert: "+result)
 	if (result['result'] == 'success') {
 		var param = 'uniq=' + result['content_idx']
 		_oc.link('../service/action.html', param, 'DEFAULT', 'DEFAULT');

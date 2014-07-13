@@ -60,7 +60,9 @@ function cbPostYeyakGetToken(result) {
 	if (rdata['access_token'] == '') {
 		_oc.link('oauth/login.html', '', 'CLEAR_TOP', 'DEFAULT');
 	} else {
-		setSetting('account_idx', rdata['account_idx'])
+		if (!getSetting('account_idx')) {
+			setSetting('account_idx', rdata['account_idx'])
+		}
 		_oc.link('yeyak/list.html', '', 'CLEAR_TOP', 'DEFAULT');
 	}
 }
