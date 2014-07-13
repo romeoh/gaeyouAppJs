@@ -185,6 +185,7 @@ function getDataType(_value) {
 
 // 전달된 파라미터를 파싱한다.
 function getParam(key, value) {
+	_oc.log("urlParameter: "+M.json(urlParameter));
 	if (!key) {
 		return urlParameter;
 	} else if (!value) {

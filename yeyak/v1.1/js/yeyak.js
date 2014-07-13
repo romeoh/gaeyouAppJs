@@ -208,7 +208,7 @@ function cbPostYeyakContentList(result) {
 			
 			$('[data-idx]').on('click', function(){
 				var  idx = $(this).attr('data-idx')
-					,param = 'idx=' + idx
+					,param = 'idx=' + idx + "&flag=list2view"
 				_oc.link('../yeyak/view.html', param, 'DEFAULT', 'DEFAULT');
 			})
 		}
@@ -384,7 +384,6 @@ function cbPostYeyakMemberAccountGet(result) {
 			data['reservation_date'] = moment().format('YYYY-MM-DD HH:mm')
 			data['user_agent'] = window.navigator.userAgent
 			data['platform'] = platform
-			_oc.log(data['reservation_date'])
 			_oc.sendPost('yeyak_reservation', data, 'cbPostYeyakContentInsert');
 		}
 	}
@@ -392,9 +391,9 @@ function cbPostYeyakMemberAccountGet(result) {
 
 // 퍼가기 등록
 function cbPostYeyakContentInsert(result) {
-	_oc.log("cbPostYeyakContentInsert: "+result)
 	if (result['result'] == 'success') {
-		var param = 'uniq=' + result['content_idx']
+		var param = 'uniq=' + result['content_idx'] + "&flag=view2action"
+		//_oc.log("uniq: "+result['content_idx']);
 		_oc.link('../service/action.html', param, 'DEFAULT', 'DEFAULT');
 	}
 }

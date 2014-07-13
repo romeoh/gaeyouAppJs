@@ -1,5 +1,5 @@
 var  server = 'http://yeyak.gaeyou.com/api/v1/'
-	,platform = 'web'
+	,platform = ''
 	,urlParameter = {}
 	,webAlarmTimeout = {}
 	,_oc = {
@@ -9,9 +9,10 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 		try{
 			window.openInterface.init(callback);
 			platform = 'android'
-		}catch(e){
+		} catch(e) {
 			var  paramUrl = window.location.href.split('?')[1] || ''
 			window[callback](paramUrl);
+			platform = 'web'
 		}
 	},
 	
@@ -20,10 +21,10 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 		var  param = param || ''
 			,stack = stack || 'DEFAULT'
 			,animation = animation || 'DEFAULT'
-		try{
+		if (platform == 'android') {
 			activity = getAcitivityName(url);
 			window.openInterface.link(activity, param, stack, anim);
-		}catch(e){
+		} else {
 			//alert("weblink")
 			if (param != '') {
 				param = '?' + param;
@@ -34,93 +35,83 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	
 	// 링크
 	'open': function(url) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.open(url);
-		}catch(e){
+		} else {
 			window.open(url);
 		}
 	},
 	
 	// back
 	'back': function() {
-		try{
+		if (platform == 'android') {
 			window.openInterface.back();
-		}catch(e){
+		} else {
 			window.history.go(-1);
 		}
 	},
 	
 	// 나의 전화번호 읽어오기
 	'getPhoneNumber': function(callback) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.getPhoneNumber(callback);
-		}catch(e){
+		} else {
 			window[callback]('', '');
 		}
 	},
 	
 	// 나의 전화번호 읽어오기
 	'getContact': function(idx, callback) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.getContact(idx, callback);
-		}catch(e){
+		} else {
 			window[callback]('');
 		}
 	},
 	
 	// 푸시아이디 읽어오기
 	'getRegistrationId': function(callback) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.getRegistrationId(callback);
-		}catch(e){
+		} else {
 			window[callback]('');
 		}
 	},
 	
 	// userAgent 읽어오기
 	'getUserAgent': function(callback) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.getUserAgent(callback);
-		}catch(e){
+		} else {
 			window[callback](window.navigator.userAgent);
 		}
 	},
-	
-	// POST 통신
-	/*'sendPost': function(tr, data, callback) {
-		try{
-			data = JSON.stringify(data)
-			window.openInterface.sendPost(tr, data, callback);
-		}catch(e){
-			window[callback]();
-		}
-	},*/
-	
+		
 	// 사진 불러오기
 	'getPhoto': function(tr, callback) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.getPhoto(tr, callback);
 			return true;
-		}catch(e){
+		} else {
 			return false;
 		}
 	},
 	
 	// 외부링크
 	'href': function(url) {
-		try{
+		if (platform == 'android') {
 			window.openInterface.href(url);
-		}catch(e){
+		} else {
 			window.open(url);
 		}
 	},
 	
 	// 네이티브 or web
 	'isNative': function(){
-		try{
+		if (platform == 'android') {
 			window.openInterface.isNatvie();
 			return true;
-		}catch(e){
+		} else {
 			return false;
 		}
 	},
@@ -130,9 +121,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 		if (!initdate) {
 			initdate = moment().format('YYYY-MM-DD')
 		}
-		try{
+		if (platform == 'android') {
 			window.openInterface.datepicker(callback, initdate);
-		}catch(e){
+		} else {
 			webDatePicker(callback, initdate);
 		}
 	},
@@ -142,48 +133,48 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 		if (!initdate) {
 			initdate = moment().format('HH:mm')
 		}
-		try{
+		if (platform == 'android') {
 			window.openInterface.timepicker(callback, initdate);
-		}catch(e){
+		} else {
 			webTimePicker(callback, initdate);
 		}
 	},
 	
 	// 리스트 
 	'list': function(title, items, init, callback){
-		try{
-			window.openInterface.list(title, items, init, callback);
-		}catch(e){
+		if (platform == 'android') {
+			window.openInterface.list(title.toString(), items.toString(), init.toString(), callback.toString());
+		} else {
 			webList(title, items, init, callback);
 		}
 	},
 	
 	// toast
 	'toast': function(text, delay){
-		try{
+		if (platform == 'android') {
 			if (!delay) {
 				delay = 'SHORT'
 			}
 			window.openInterface.toast(text, delay);
-		}catch(e){
+		} else {
 			console.log(text);
 		}
 	},
 	
 	// log
 	'log': function(text){
-		try{
+		if (platform == 'android') {
 			window.openInterface.log(text);
-		}catch(e){
+		} else {
 			console.log(text);
 		}
 	},
 	
 	// 공유하기
 	'share': function(msg){
-		try{
+		if (platform == 'android') {
 			window.openInterface.share(msg);
-		}catch(e){
+		} else {
 			console.log(msg);
 		}
 	},
@@ -191,17 +182,17 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	// API
 	'api': {
 		'kakaotalk': function(q, p){
-			try{
+			if (platform == 'android') {
 				window.openInterface.kakaotalk(q, p);
-			}catch(e){
+			} else {
 			
 			}
 		},
 		
 		'kakaostory': function() {
-			try{
+			if (platform == 'android') {
 				window.openInterface.kakaostory();
-			}catch(e){
+			} else {
 			
 			}
 		}
@@ -210,9 +201,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	// uri
 	'uri': {
 		'facebook': function(id){
-			try{
+			if (platform == 'android') {
 				window.openInterface.openFacebook('fb\:\/\/page\/'+id);
-			}catch(e){
+			} else {
 				window.open('https://www.facebook.com/'+id)
 			}
 		}
@@ -222,9 +213,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	'alarm': {
 		// 설정
 		'set': function(uniq, time){
-			try{
+			if (platform == 'android') {
 				window.openInterface.alarm(parseInt(uniq, 10), parseInt(time, 10));
-			}catch(e){
+			} else {
 				webAlarmTimeout[uniq] = setTimeout(function(){
 					console.log(time + '초 후에 알람등록 시뮬레이션 완료')
 					delete webAlarmTimeout[uniq];
@@ -233,9 +224,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 		},
 		// 취소
 		'cancel': function(uniq){
-			try{
+			if (platform == 'android') {
 				window.openInterface.alarmCancel(parseInt(uniq, 10));
-			}catch(e){
+			} else {
 				console.log(uniq + '예약취소 시뮬레이션 완료')
 				clearTimeout(webAlarmTimeout[uniq]);
 				delete webAlarmTimeout[uniq];
@@ -245,10 +236,10 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	
 	// 데이터 통신
 	'sendPost': function(tr, data, callback){
-		try{
+		if (platform == 'android') {
 			dataString = M.json(data);
 			window.openInterface.sendPost(tr, dataString, callback);
-		}catch(e){
+		} else {
 			$.ajax({
 				url : server + tr + '.php',
 				type : "POST",
@@ -265,9 +256,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	
 	// 이미지 업로드
 	'upload': function(tr, file, callback){
-		try{
+		if (platform == 'android') {
 			window.openInterface.upload(tr, file, callback);
-		}catch(e){
+		} else {
 			var fileElement = $('#'+file).val()
 			$.ajaxFileUpload({ 
 				url : server + tr + '.php',
@@ -292,9 +283,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	
 	// 앱종료
 	'kill': function(tr, file, callback){
-		try{
+		if (platform == 'android') {
 			window.openInterface.kill();
-		}catch(e){
+		} else {
 			if( confirm("창을 닫겠습니까?") ) {
 				window.close();
 			}
@@ -303,9 +294,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	
 	// 진동
 	'vabrator': function(time){
-		try{
+		if (platform == 'android') {
 			window.openInterface.vabrator(time);
-		}catch(e){
+		} else {
 			console.log('vabrator: ' + time)
 		}
 	},
@@ -313,9 +304,9 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	// 브라우져
 	'clear': {
 		'cookie': function() {
-			try{
+			if (platform == 'android') {
 				window.openInterface.clearCookie();
-			}catch(e){
+			} else {
 				//window[callback]()
 			}
 		}
@@ -323,18 +314,35 @@ var  server = 'http://yeyak.gaeyou.com/api/v1/'
 	
 	// 전역변수 사용하기
 	'variable': function(key, value){
-		try{
+		if (platform == 'android') {
 			if (value) {
 				window.openInterface.setVariable(key, value);
 			} else {
 				//window.openInterface.getVariable(key);
 			}
-		}catch(e){
+		} else {
 			setParam(key, value)
 		}
 	}
 
 }
+
+
+$(window).ready(function(){
+	_oc.init("onInitPage");
+})
+
+function onInitPage(param) {
+	initDefault(param);
+	if (param) {
+		p = param.split('&');
+		for (var i in p) {
+			urlParameter[p[i].split('=')[0]] = p[i].split('=')[1];
+		}
+	}
+	window['onReady']();
+}
+
 
 function getAcitivityName(act) {
 	return act.replace(/\.\.\//, '');//.replace(/\.\//, '');
@@ -414,24 +422,6 @@ function removeToast() {
 		.html('')
 		.css('display', 'none')
 		.removeClass('top-style');
-}
-
-
-$(window).ready(function(){
-	if (platform == 'web') {
-		_oc.init("onInitPage");
-	}
-})
-
-function onInitPage(param) {
-	initDefault(param);
-	if (param) {
-		p = param.split('&');
-		for (var i in p) {
-			urlParameter[p[i].split('=')[0]] = p[i].split('=')[1];
-		}
-	}
-	window['onReady']();
 }
 
 

@@ -18,7 +18,7 @@ function initService() {
 	data['user_idx'] = getSetting('user_idx');
 	//data['account_idx'] = getSetting('account_idx');
 	data['content_idx'] = getParam('uniq');
-	//_oc.log("user_idx: "+getSetting('user_idx')+" -- uniq: "+getParam('uniq'))
+	//_oc.toast("user_idx: "+getSetting('user_idx')+" -- uniq: "+getParam('uniq'))
 	_oc.sendPost('yeyak_action', data, 'cbPostYeyakAction');
 }
 
