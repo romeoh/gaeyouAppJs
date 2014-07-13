@@ -111,7 +111,7 @@ nav .gnb .fa-2x {font-size:1.5em}
 .timeline dl dd li .thumnail {height:55px}
 .timeline dl dd li .story-nickname {margin-left:55px; font-size:16px; font-weight:bold}
 .timeline dl dd li .story-date {margin-left:55px; color:#bbb}
-.timeline dl dd li .description {font-size:18px; width:100%; margin:10px 0 20px 0}
+.timeline dl dd li .description {font-size:18px; width:100%; margin:10px 0 20px 0; overflow-wrap:break-word}
 .timeline dl dd li .date strong {font-size:19px}
 .timeline dl dd li .content-image {margin-bottom:10px; position:relative; max-width:500px}
 .timeline dl dd li .content-image img {max-width:100%; width:100%}
@@ -133,7 +133,7 @@ nav .gnb .fa-2x {font-size:1.5em}
 .timeline dl dd li .result.history {padding:0px}
 .timeline dl dd li:last-child {border-bottom:none}
 .timeline dl dd li .profile {position:absolute; left:9px; top:9px}
-.timeline dl dd li .profile img {border-radius:5px; width:50px}
+.timeline dl dd li .profile img {border-radius:5px; width:50px; height:50px}
 .timeline dl dd li .profile.biz-profile img {border:2px solid #727AD6; width:40px; height:40px}
 .timeline dl dd li .nickname {font-size:16px; color:#aaaaaa; margin-left:55px}
 .timeline dl dd li .time {color:#c6c6c6; font-size:12px}
@@ -166,7 +166,7 @@ nav .gnb .fa-2x {font-size:1.5em}
 .replybox li.more {min-height:inherit}
 .replybox li.no-reply {text-align:center; padding:30px; }
 .replybox li .profile {position:absolute; margin-right:10px}
-.replybox li .profile img {border-radius:5px; width:45px; height:50x}
+.replybox li .profile img {border-radius:5px; width:45px; height:45px}
 .replybox li .reply {position:relative; padding:0px 0px 0px 55px}
 .replybox li .reply .author {color:#ACACAC}
 .replybox li .reply .title {}
