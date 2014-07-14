@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+body, p, h1, h2, h3, h4, h5, ul, li, dl, dt, dd, header {margin:0; padding:0; font-family: '나눔고딕',NanumGothic,'맑은 고딕','Malgun Gothic','돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; color:#505050}
+body {margin:0; background:#e5e5e5}
+a {text-decoration:none; cursor:pointer; color:#505050}
+a:hover {text-decoration:none}
+li {list-style:none;}
+.hide {display:none}
+.btn-alpha {border:none; background:transparent}
+.btn-lg2 {font-size:20px; color:#fff; padding-top:7px}
+.fa-1x {font-size:1.7em; vertical-align:middle}
+/*.form-line {border:none !important; border-bottom:2px solid #ccc !important; border-radius:0 !important; background:none !important}*/
+
+.container {
+	width: 960px !important;
+}
+
+@media (min-width: 1px) {
+	.container {
+		max-width: 940px;
+	}
+}
+  
+.wrap {position: absolute;padding:60px 15px 15px 15px;background-color: #fafafa; top:0px; bottom:0px; width:100%}
+.wrap h1 {text-align:center}
+.wrap h1 img {width:80%; margin-right:40px}
+.wrap .tradmark {position:absolute; top:10px; right:10px; text-align:right}
+.wrap .tradmark img {width:50px}
+.wrap .text-muted {text-align:center; font-size:17px; padding:10px}
+.wrap .join {}
+.wrap .first-name {width:80px; float:left; margin-right:20px}
+.wrap .last-name {width:150px}
+.wrap .birth-year,
+.wrap .birth-month,
+.wrap .birth-date
+{width:80px; display:inline}
+.wrap .profile {text-align:center}
+.wrap .phone1 {width:80px; display:inline}
+.wrap .phone2 {width:80px; display:inline}
+.wrap .phone3 {width:80px; display:inline}
+.wrap .profile img {width:150px; height:150px}
+
+/* 타이틀 */
+header {position:fixed; width:100%; background:#000; z-index:999}
+header .header {height:51px; border-top-left-radius:5px; border-top-right-radius:5px; padding:6px;background: #088ed6;}
+header .header .tl {position:absolute; left:3px; top:7px}
+header .header .tr {position:absolute; right:3px; top:7px}
+header .header .tl i,
+header .header .tr i {color:#fff; vertical-align:middle}
+header .header .tr button {color:#fff}
+header .header .tr button.sel,
+header .header .tr button.sel i {color:#FFF14D}
+header .header .tc h1 {text-align:center; font-size:18px; color:#fff; padding:10px; font-weight:bold}
+
+nav {position:fixed; bottom:0px; width:100%; background:#000; z-index:110}
+nav .gnb {background:#e2ef70; display:table; width:100%}
+nav .gnb li {float:left; width:25%; text-align:center; padding:0 5px}
+nav .gnb li a {display:inline-block; padding:5px 5px 5px 5px; height:52px; width:100%; position:relative; color:#036536}
+nav .gnb li .fa-21x {font-size:1.7em}
+nav .gnb li a p {position:absolute; width:100%; text-align:center; left:0; font-size:13px; font-weight:bold; color:#036536}
+nav .gnb li.sel a {border-bottom:4px solid #e83842}
+nav .gnb li.sel {background:#f7ffb2}
+nav .gnb li.sel p, 
+nav .gnb li.sel i {color:#e83842}
+nav .gnb .fa-2x {font-size:1.5em}
+
+/* 로그인 */
+.login {text-align:center;margin: auto 0; position: absolute; top:0px; bottom:0px; left:0px; right:0px; background:url('../images/intro.png') center center no-repeat; background-size:100% auto}
+.login img {max-width:100%}
+.loginbtn {text-align:center}
+.loginbtn .kakao-info {font-size:24px; padding:20px 0 20px}
+.loginbtn .kakao-login {cursor:pointer}
+.loginbtn .kakao-help {padding-top:20px}
+.loginbtn .kakao-top {}
+.loginbtn .kakao-top img {max-width:100%}
+
+/* 판넬 */
+.left-panel {position:fixed; top:52px; left:-250px; bottom:0; width:250px; background:#ECEBEB; z-index:810; padding:20px}
+.left-panel ul {}
+.left-panel ul li {border-bottom:1px solid #C7C7C7; padding:10px; vertical-align:middle; font-size:17px}
+.left-panel ul li:active {background:#C5E4BD}
+.left-panel ul li i {vertical-align:middle}
+.panel-bg {position:fixed; top:0; left:0; right:0; bottom:0; background:#000; z-index:800; opacity:0; display:none}
+.left-panel .apps {position:absolute; bottom:20px}
+
+.loading {font-size:22px; text-align:center; padding:20px}
+
+.fa-yellow {color:#E2A301}
+.timeline .control-input {background:#fff; padding:5px 12px; position:relative}
+.timeline .control-input .select-list {margin-right:30px}
+.timeline .control-input .favorite {position:absolute; right:8px; top:8px}
+.timeline .control-input .ico {position:absolute; right:47px; top:9px; font-size:11px}
+.timeline .story-count {padding-left:12px}
+.timeline .story-count strong {font-size:16px}
+.timeline {padding:50px 0px} 
+.timeline dl dt {padding: 5px 22px; color: #565656; position:relative}
+.timeline dl dt .lc {float:right; color:#CED9DF}
+.timeline dl dt.tday {background:#c5c5c5}
+.timeline dl dt.tday .lc {color:#C3D0E7}
+.timeline dl dd {padding:12px}
+.timeline dl dd.type2 {padding:3px 12px}
+.timeline dl dd.holiday {border-left:5px solid #FF77BE; padding-left:7px}
+.timeline dl dd ul {border:1px solid #BEBEBE; border-radius:5px; background:#fff}
+.timeline dl#today ul {border:1px solid #99abb3;}
+.timeline dl dd li {position:relative; border-bottom:1px solid #ddd; padding:10px 15px; }
+.timeline dl dd li span {color:#C2C2C2}
+.timeline dl dd li span.score {color:#FF0070; font-weight:bold}
+.timeline dl dd li:active {background:#F0F2FD}
+.timeline dl dd li.pressed {background:#F0F2FD}
+.timeline dl dd li.no-schedule {padding:20px; text-align:center; font-size:18px; color:#76778B}
+.timeline dl dd li .thumnail {height:55px}
+.timeline dl dd li .story-nickname {margin-left:55px; font-size:16px; font-weight:bold}
+.timeline dl dd li .story-date {margin-left:55px; color:#bbb}
+.timeline dl dd li .description {font-size:18px; width:100%; margin:10px 0 20px 0; overflow-wrap:break-word}
+.timeline dl dd li .date strong {font-size:19px}
+.timeline dl dd li .content-image {margin-bottom:10px; position:relative; max-width:500px}
+.timeline dl dd li .content-image img {max-width:100%; width:100%}
+.timeline dl dd li .content-image .icon-gif {background:#fff; opacity:.7; position:absolute; right:0px; top:0px; padding:5px 7px; border-radius:5px; font-weight:bold}
+.timeline dl dd li .content-image .icon-play {position:absolute; font-size:100px; opacity:.5; color:#73d3ef; text-align:center; width:100%; padding-top:40px}
+.timeline dl dd li .share-box {color:#999}
+.timeline dl dd li .favorite {position:absolute; right:16px; top:12px}
+.timeline dl dd li .feed-description {font-size:16px; width:100%; max-height:68px; overflow:hidden}
+.timeline dl dd li .feed-description .thum {float:left; margin-right:10px}
+.timeline dl dd li .feed-description .thum img {max-width:95px; max-height:65px}
+.timeline dl dd li .description.public {font-size:22px}
+.timeline dl dd li .welcom {text-align:center; font-size:20px; font-weight:bold; color:#C519BE; padding:10px 0}
+.timeline dl dd li .info {text-align:center; font-size:18px; color:#A7A7A7}
+.timeline dl dd li .dday {font-size:22px; color:#888; font-weight:bold }
+.timeline dl dd li .dday.public {font-size:18px}
+.timeline dl dd li .dday.past {color:#07B1E7}
+.timeline dl dd li .dday.future {color:#E707B1}
+.timeline dl dd li .result {background:#eee; border-radius:10px; padding:10px; margin-top:5px; font-size:16px}
+.timeline dl dd li .result.history {padding:0px}
+.timeline dl dd li:last-child {border-bottom:none}
+.timeline dl dd li .profile {position:absolute; left:9px; top:9px}
+.timeline dl dd li .profile img {border-radius:5px; width:50px; height:50px}
+.timeline dl dd li .profile.biz-profile img {border:2px solid #727AD6; width:40px; height:40px}
+.timeline dl dd li .nickname {font-size:16px; color:#aaaaaa; margin-left:55px}
+.timeline dl dd li .time {color:#c6c6c6; font-size:12px}
+.timeline dl dd .public-dday {margin-top:30px}
+.timeline .indicator {padding:180px 0; text-align:center; color:#B9B9B9}
+.timeline .indicator p {font-size:20px; padding:20px; color:#B9B9B9}
+
+.reservation {color:#9F03DB !important; float:right}
+.reservation-cancel {color:#D10000 !important}
+.reservation-complete {color:#00D5B3 !important}
+
+.detail-view {padding:62px 10px 13px 10px}
+.detail-view .images img {max-width:100%; width:100%}
+.detail-view .profile {margin-bottom:10px}
+.detail-view .profile .thumnail {position:absolute}
+.detail-view .profile .thumnail img {width:50px; height:50px; border-radius:5px}
+.detail-view .profile .profile-detail {padding-left:60px; position:relative}
+.detail-view .profile .profile-detail .story-name {font-weight:bold; font-size:18px}
+.detail-view .profile .profile-detail .condition {position:absolute; right:0px; top:0px}
+.detail-view .content-box {background:#fff}
+.detail-view .content-box .description {font-size:18px; padding:10px}
+.detail-view .content-box .description .contents {}
+
+
+.replybox {margin-bottom:44px}
+.replybox h2 {font-size:16px; background:#99abb3; padding:10px; color:#fff}
+.replybox h2 span {font-size:16px}
+.replybox ul {}
+.replybox li {border-bottom:1px solid #eee; display:table; width:100%; padding:10px; background:#fff; min-height:70px}
+.replybox li.more {min-height:inherit}
+.replybox li.no-reply {text-align:center; padding:30px; }
+.replybox li .profile {position:absolute; margin-right:10px}
+.replybox li .profile img {border-radius:5px; width:45px; height:45px}
+.replybox li .reply {position:relative; padding:0px 0px 0px 55px}
+.replybox li .reply .author {color:#ACACAC}
+.replybox li .reply .title {}
+.replybox li .reply .description {padding:0}
+.replybox li .reply .control {position:absolute; right:0px; top:0px; color:#CFCFCF}
+.replybox .reload {background:#e9e9e9; color:#bababa; padding:20px}
+.replybox .reload button {}
+#viewProfile {width:50px; height:50px}
+
+.toast {position:fixed; bottom:50px; right:0px; z-index:3000; opacity:.8}
+.toast .toast-dialog {margin:10px}
+.toast .toast-content {background:#000; border-radius: 6px;}
+.toast.top-style {top:30px; right:30px}
+
+.write-box {position:fixed; bottom:0px; width:100%; border-top:1px solid #999; background:#f5f5f5}
+.write-box .btn-add {position:absolute; top:3px; right:3px}
+.write-box .recon {border: 1px solid #D1D2CA; padding: 7px 15px; margin:3px 60px 6px 5px}
+.write-box .con {min-height: 18px; max-height: 54px;white-space: nowrap;overflow:auto;outline: none;line-height: 18px;}
+.write-box .con.msg {}
+
+.schedule-insert {padding:55px 10px}
+.schedule-insert label {display: block}
+.schedule-insert .date {width:160px; display:inline-block; margin-right:10px; padding:6px 8px; margin-right:5px}
+.schedule-insert .time {width:122px; padding:6px 8px}
+.schedule-insert .option {background:#eee; padding:10px; margin-bottom:10px}
+.schedule-insert .form-group {position:relative}
+.schedule-insert .form-dt {position:relative}
+.schedule-insert .form-dt .form-date {padding:6px 7px; border:1px solid #ccc; border-radius:4px; background:#fff; max-height:34px; line-height:22px; overflow:hidden; min-height:34px}
+.schedule-insert .form-dt .form-time {position:absolute; top:0px; right:48px; padding:6px 7px; border:1px solid #ccc; border-radius:4px; background:#fff; width:115px; min-height:34px}
+.schedule-insert .form-dt .form-date.form-line {margin-right:167px}
+.schedule-insert .form-dt .form-time.disable {background:#eee; color:#AFACAC}
+.schedule-insert .control {margin-right:50px}
+.schedule-insert .btn-add {position:absolute; right:0px; bottom:0px}
+.form-hidden {display:none}
+
+/*.schedule-insert .cal-description {min-height: 30px ;line-height: 18px; border-bottom:2px solid #ccc; border-radius:0px; padding:6px 7px}*/
+.schedule-insert .cal-description {min-height: 100px; line-height: 18px; height:inherit}
+.schedule-insert .options {position:fixed; bottom:0px; left:0px; background:#eee; padding:5px; width:100%; z-index:999}
+.schedule-insert .form-group label span {font-weight:normal; padding-left:5px}
+.schedule-insert #groupShare,
+.schedule-insert #groupRepeat,
+.schedule-insert #groupAlarm,
+.schedule-insert #groupPhoto,
+.schedule-insert #groupMovie,
+.schedule-insert #groupPlace {display:none}
+.schedule-insert #uploadImg {padding-bottom:10px}
+.schedule-insert #uploadImg img {max-width:100%}
+.schedule-insert .allday {display:inline}
+.schedule-insert .allday .allday-enable {display:none}
+.schedule-insert .allday .allday-disable {display:inline-block; cursor:pointer}
+.schedule-insert .allday.yes .allday-enable {display:inline-block; cursor:pointer}
+.schedule-insert .allday.yes .allday-disable {display:none}
+.list-large {font-size:18px}
+select.list-large {height:45px}
+.list-large li i {color:red}
+.schedule-insert .img-list li {position:relative; float:left; margin:0 20px 20px 0}
+.schedule-insert .img-list li .times {position:absolute; top:-13px; right:-10px; color:#FF7373}
+.schedule-insert .img-list li img {width:100px; height:100px}
+
+.nav-group {padding-top:55px; background:#fff;}
+.nav-group li {float:left; width:50%}
+.nav-group.type3 li {width:33.3%}
+.nav-group li a {display:block; padding:5px 0 9px 0; text-align:center; font-size:14px; font-weight:bold; background:#fff;}
+.nav-group li:last-child a {border-right:none}
+.nav-group li a:active {background:#F0F2FD}
+.nav-group li.sel a {border-bottom:4px solid #0d6b9f; color:#088ed6; padding-bottom:4px}
+
+.calendar-box {padding:60px 0px}
+.calendar-cal {padding:0px 10px 10px 10px}
+.calendar {text-align:center; margin-bottom:5px; background:#fff}
+.calendar>thead>tr>th {text-align:center; padding:6px; background:#99abb3; color:#fff; border:none}
+.calendar>tbody>tr>td {text-align:right; padding:0; width:14%}
+.calendar>tbody>tr>td:active {background:#F0F2FD}
+.calendar>tbody>tr>td>.cday {padding:3px 4px 0 0}
+.calendar>tbody>tr>td>.dcount {background:#1fbba6; color:#fff; margin:3px; padding:3px 4px 3px 0; border-radius:5px; visibility:hidden}
+.calendar>tbody>tr>td.tday {background:#CBE5F7}
+.calendar>tbody>tr>td.sel {background:#eee}
+.calendar .sun {background:#FAEAF2}
+.calendar .holiday {background:#FAEAF2}
+/*.calendar .sat {background:#F7F7F7}*/
+.calendar.week td {padding:10px; text-align:center}
+.cal-nav {padding-bottom:5px; text-align:center}
+.cal-nav input {display:inline-block; width:180px; vertical-align:middle; line-height:normal; margin-right:-15px}
+.cal-nav #nextMonth {}
+.calendar-box .cal-control {text-align:right}
+.calendar-box .cal-list {margin-top:10px}
+.calendar-box .cal-list .todo {background:#fff; border:1px solid #e5e5e5; border-radius:5px; display:none}
+
+.schedule {background:#fff}
+.schedule dd {position:relative}
+.schedule dd.tday {background:#ececec}
+.schedule dd.no-schedule {padding:20px; text-align:center; color:#76778B}
+.schedule .nickname {font-size:16px; color:#aaaaaa}
+.schedule .summary {font-size:18px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; width:100%; padding-right:56px}
+.schedule .summary.no-todo {display:inline; padding:inherit}
+.schedule .description {font-size:14px; }
+.schedule .time {font-size:14px; color:#C5C5C5}
+.schedule .profile {position:absolute; top:15px; right:17px}
+.schedule .profile img {border-radius:5px}
+.schedule .profile.biz-profile {top:13px; right:15px}
+.schedule .profile.biz-profile img {border:2px solid #727AD6; width:40px; height:40px}
+.schedule .profile i {position:absolute; top:30px; right:-6px}
+.schedule dt {background:#99abb3; padding:5px 10px; color:#fff}
+.schedule dt.todo-title {background:#7EC3A8}
+.schedule dt .lc {float:right; color:#CED9DF}
+.schedule dt.tday {background:#727AD6}
+.schedule dt.tday .lc {color:#C3D0E7}
+.schedule dd {border-bottom:1px solid #ddd; padding:10px; font-size:18px}
+.schedule dd:active {background:#F0F2FD}
+.schedule dd:last-child {border-bottom:none}
+.calendar-box .dairy {text-align:center; margin:0 0 5px 0}
+.calendar-box .pie {width:300px; height:300px; background:url(../images/bg_pie.png) no-repeat; background-size:100%}
+
+.todo-list {padding:60px 0px;}
+.todo-list dl {background:#fff}
+.todo-list dt {background: #99abb3;padding: 5px 10px;color: #fff;}
+.todo-list dd {position:relative; border-bottom:1px solid #eee; padding:10px}
+.todo-list dd .pull-right {top:21px; right:12px; position:absolute; color:#C4C4C4}
+.todo-list dd .description {background:#eee; border:1px solid #ddd; border-radius:5px; margin-top:10px}
+.todo-list dd .description .desc {padding:10px}
+.todo-list dd .description.hide {display:none}
+.todo-list dd .description .control {padding:5px; text-align:right; border-top:1px solid #ddd}
+.todo-list dd .description .complete .todo-decomplete {display:none}
+.todo-list dd .description .decomplete .todo-complete {display:none}
+.todo-list dd[data-uncomplete-list] {background:#E9E9E9}
+.todo-list dd[data-uncomplete-list] p {color:#AFAFAF}
+.todo-list .summary {font-size:16px; margin-right:25px}
+.todo-list .summary.no-todo {text-align:center; padding:10px; color:#8F8F8F}
+.todo-list .date {color:#949494; font-size:12px}
+
+
+.friends {padding:60px 0px}
+.friends.tap {padding:45px 0px}
+.friend-list dl {background:#fff; border-bottom:1px solid #ddd}
+.friend-list dt {background:#99abb3; padding:5px; color:#fff}
+.friend-list dd {border-bottom:1px solid #ddd; padding:7px 5px; position:relative; min-height:60px}
+.friend-list dd:active {background:#F0F2FD}
+.friend-list dd.no-result {text-align:center; font-size:16px; color:#aaa; padding:15px; min-height:inherit}
+.friend-list dd:last-child {border-bottom:none}
+.friend-list dd .profile {position:absolute; top:9px; left:8px}
+.friend-list dd .profile img {border-radius:5px}
+.friend-list dd .profile.biz-profile {top:7px; left:6px}
+.friend-list dd .profile.biz-profile img {border:2px solid #727AD6; width:40px; height:40px}
+.friend-list dd .member {margin-left:50px}
+.friend-list dd .member .overview {color:#B8B6B6}
+.friend-list dd .member .btndel {position:absolute; top:12px; right:5px; display:none}
+.friend-list dd .add {position:absolute; right:5px; top:15px}
+.friend-list dd .member .name,
+.friend-list dd .member-invite .name  {font-size:18px}
+.friend-list dd .member-invite {margin-left:52px; padding-top:10px}
+.friend-list .no-result {text-align:center}
+.friend-list .category {}
+.friend-list .category li {background:#eee; width:32%; text-align:center; height:100px; padding:10px 0; float:left; margin:1px}
+#searchResult {display:none}
+
+.profile-view {padding:60px 10px;}
+.profile-view .photo-con {text-align:center; margin-top:20px}
+.profile-view .photo {text-align:center; position:relative; display:inline-block; min-height:150px}
+.profile-view .photo img {border-radius:5px; width:150px; height:150px}
+.profile-view .photo .biz-profile img {border:2px solid #727AD6; }
+.profile-view .reliance {border:1px solid #ddd; border-radius:5px; margin:10px 20px 0 20px; padding:0}
+.profile-view .reliance p {padding:5px}
+.profile-view .detail {margin:10px 20px}
+.profile-view .detail .name {font-size:20px; text-align:center}
+.profile-view .detail .add {margin:10px; text-align:center; display:none}
+.profile-view .detail .info {margin:5px 0; display:none}
+.profile-view .confirm {text-align:center}
+.profile-view textarea {height:100px}
+
+.setting {padding:55px 0px}
+.setting .setting-group {padding:10px}
+
+.recent {padding:60px 10px;}
+.recent ul {border:1px solid #ddd; border-radius:5px}
+.recent li {border-bottom:1px solid #ddd; min-height:60px; padding:5px; background:#fff}
+.recent li:first-child {border-top-left-radius:5px; border-top-right-radius:5px;}
+.recent li:last-child {border-bottom-left-radius:5px; border-bottom-right-radius:5px; border-bottom:none}
+.recent li.view {background:#F7F7F7}
+.recent li .profile {float:left; margin-right:5px}
+.recent li .title {font-size:16px}
+.recent li .title .time {font-size:13px; color:#CACACA}
+.recent li .description {}
+
+.search {position:relative; margin:5px 10px 0 10px}
+.search .input-box {margin-right:40px}
+.search .input-btn {position:absolute; top:0px; right:0px}
+.search .form-group {margin-bottom:10px}
+
+.modal {top:30px}
+.modal .modal-body {padding:0}
+.modal .modal-body li {border-bottom:1px solid #eee; padding:12px 20px; cursor:pointer; font-size:16px}
+.modal .modal-body li:active {background:#F0F2FD}
+.modal .modal-body li:last-child {border-bottom:none}
+.modal .modal-body li.sel {background:#eee}
+.modal .modal-extra {position:absolute; bottom:20px; left:20px}
+.modal .group-movie-input {padding:12px 12px 5px 12px}
+.modal .group-movie-input .msg-text {border:1px solid #eee; font-size:20px; border-radius:6px; padding:10px}
+
+.modal .cal-nav {padding:10px 0 0 0px; text-align:center}
+.modal .calendar {text-align:center; margin-bottom:5px; background:#fff}
+.modal .calendar>thead>tr>th {text-align:center; padding:6px; background:#99abb3; color:#fff; border:none}
+.modal .calendar>tbody>tr>td {text-align:center; padding:0px; width:14%}
+.modal .calendar>tbody>tr>td>.cday {padding:3px 4px 0 0}
+.modal .calendar>tbody>tr>td>.lc {color:#AFAFAF; margin:3px; border-radius:5px; font-size:12px}
+.modal .calendar>tbody>tr>td.tday {background:#CBE5F7}
+.modal .calendar>tbody>tr>td.sel {background:#eee}
+
+.modal .cal-nav .time-label {font-size:40px; text-align:left; padding-left:114px}
+.modal .cal-nav .ampm {position:absolute; top:18px; left:11px}
+.modal .calendar.time-picker>thead>tr>th {padding:2px 5px; text-align:left; background:#eee; color:#333}
+.modal .calendar.time-picker>tbody>tr>td {padding:10px}
+.modal .calendar.time-picker>tbody>tr>td.sel {background:#CBE5F7}
+.modal .lc {font-size:14px; color:#aaa; margin-left:10px}
+.modal .progress-spin {text-align:center; margin:40px 0; font-size:20px}
+
+
+.action {padding:0px 10px}
+.action .img-box img {width:100%; max-width:100%; margin-bottom:20px}
+.action .btn-box {text-align:center}
+
+.account-list {font-size:16px}
+.account-list .profile {width:50px; height:50px; margin-right:10px; border-radius:5px}
+.account-list .badge {margin-top:15px}
+
+
