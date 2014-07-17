@@ -59,7 +59,7 @@ function cbPostYeyakGetToken(result) {
 	if (rdata['access_token'] == '') {
 		_oc.link('oauth/login.html', '', 'CLEAR_TOP', 'DEFAULT');
 	} else {
-		_oc.link('game/list.html', '', 'CLEAR_TOP', 'DEFAULT');
+		_oc.link('game/new.html', '', 'CLEAR_TOP', 'DEFAULT');
 	}
 }
 
