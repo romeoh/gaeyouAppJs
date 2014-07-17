@@ -18,14 +18,24 @@ function onReady() {
 	
 	/* 예약하기 */
 	if ($('#upload').length > 0) {
+		checkAccount();
 		initEvent();
 		initReservation();
 	}
 	
 	/* 보기 */
 	if ($('#view').length > 0) {
+		checkAccount();
 		initEvent();
 		initView();
+	}
+}
+
+// account idx check
+function checkAccount() {
+	if (getSetting('account_idx') == '') {
+		_oc.toast('등록된 계정이 없습니다.');
+		_oc.link('../oauth/account.html', '', 'CLEAR_TOP', 'DEFAULT');
 	}
 }
 

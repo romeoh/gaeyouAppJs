@@ -26,6 +26,9 @@ function onReady() {
 	}
 }
 
+var canSelected = false
+	,accountList
+	
 function cbPostYeyakMemberAccount(result) {
 	if (result['result'] == 'success') {
 		var rdata = result['data']
@@ -33,14 +36,19 @@ function cbPostYeyakMemberAccount(result) {
 			,accountIdx = getSetting('account_idx')
 			,active
 		
-		console.log(rdata)	
+		accountList = rdata;
+		//console.log(rdata)	
 		for (var i in rdata) {
 			if (accountIdx == rdata[i]['idx']) {
-				active = '<span class="badge"><i class="fa fa-check"></i></span>'
+				active = '<i class="fa fa-check"></i> '
+				canSelected = true;
 			} else {
 				active = ''
 			}
-			str += '<li class="list-group-item" data-account="' + rdata[i]['idx'] + '"><img src="' + rdata[i]['story_profile'] + '" class="profile">' + rdata[i]['story_nickname'] + active + '</li>'
+			str += '<li class="list-group-item" data-account="' + rdata[i]['idx'] + '">' + active;
+			str += '	<img src="' + rdata[i]['story_profile'] + '" class="profile">' + rdata[i]['story_nickname'];
+			str += '		<button class="btn btn-default log-out" data-logout="' + rdata[i]['idx'] + '">연결해제</button>';
+			str += '</li>';
 		}
 		$('#account').html(str)
 		$('[data-account]').on('click', function(){
@@ -48,44 +56,41 @@ function cbPostYeyakMemberAccount(result) {
 			setSetting('account_idx', idx);
 			_oc.link('../yeyak/list.html')
 		})
+		
+		// 로그아웃
+		$('[data-logout]').on('click', function(){
+			var  idx = $(this).attr('data-logout')
+				,data = {}
+			
+			if (!confirm('이 계정을 연결해제 하시겠습니까?')) {
+				return false;
+			}
+			data['user_idx'] = getSetting('user_idx')
+			data['account_idx'] = idx
+			
+			_oc.sendPost('yeyak_member_logout', data, 'cbPostYeyakMemberLogout');
+			return false;
+		})
+		if (!canSelected) {
+			refreshAccount();
+		}
 	}
 }
 
-
-// 이벤트
-function initEvent() {
-	$('#help').on('click', function(){
-		var str = '';
-		str += '<div class="modal-dialog">';
-		str += '	<div class="modal-content">';
-		str += '		<div class="modal-header">';
-		str += '			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-		str += '			<h4 class="modal-title" id="modalLabel">카스예약 올리기란?</h4>';
-		str += '		</div>';
-		str += '		<div class="modal-body" id="modalContent">';
-		
-		str += '<div class="form-group group-movie-input">';
-		str += '	<img src="/m/images/help.png" style="width:100%">';
-		str += '</div>';
-	
-		str += '</div>';
-		str += '		<div class="modal-footer">';
-		str += '			<button type="button" class="btn btn-primary" id="btnCloseModal">닫기</button>';
-		str += '		</div>';
-		str += '	</div>';
-		str += '</div>';
-		
-		$('#modal').modal('show');
-		$('#modal').html(str);
-		
-		$('#btnCloseModal').on('click', function(){
-			hideModal();
-		})
-	})
+function cbPostYeyakMemberLogout(result) {
+	_oc.toast('연결해제 되었습니다.');
+	window.location.reload();
 }
 
-
-
+// account idx refresh
+function refreshAccount() {
+	if (accountList.length != 0) {
+		setSetting('account_idx', accountList[0]['idx']);
+		$('[data-account="' + accountList[0]['idx'] + '"]').prepend('<i class="fa fa-check"></i> ');
+	} else {
+		setSetting('account_idx', '');
+	}
+}
 
 
 
