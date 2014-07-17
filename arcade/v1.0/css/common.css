@@ -68,8 +68,8 @@ nav .gnb .fa-2x {font-size:1.5em}
 .login {text-align:center;margin: auto 0; position: absolute; top:0px; bottom:0px; left:0px; right:0px; background:url('../images/intro.png') center center no-repeat; background-size:100% auto}
 .login img {max-width:100%}
 .loginbtn {text-align:center}
-.loginbtn .kakao-info {font-size:24px; padding:20px 0 20px}
-.loginbtn .kakao-login {cursor:pointer}
+.loginbtn .kakao-info {font-size:24px}
+.loginbtn .kakao-login {cursor:pointer; padding:20px 0 0 0}
 .loginbtn .kakao-help {padding-top:20px}
 .loginbtn .kakao-top {}
 .loginbtn .kakao-top img {max-width:100%}

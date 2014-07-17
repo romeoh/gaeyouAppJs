@@ -4,6 +4,11 @@ function onReady() {
 	
 	/* 로그인 */
 	if ($('#login').length > 0) {
+		// 카카오톡으로 로그인
+		$('#btnTalk').on('click', function(){
+			
+		})
+		
 		// 카카오스토리 로그인
 		$('#btnLogin').on('click', function(){
 			var param = 'user_idx=' + getSetting('user_idx');
