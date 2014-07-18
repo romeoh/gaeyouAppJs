@@ -222,13 +222,13 @@ function cbPostYeyakContentTimeline(result) {
 function initView() {
 	
 	$('#infoNotice')
-		.html('<i class="fa fa-info-circle fa-red"></i> 게임이 실행이 안될때는?')
-		.popover({
+		.html('<i class="fa fa-info-circle fa-red"></i> Ver 1.0.4로 업데이트 해주세요.')
+		/*.popover({
 			 title: '게임이 실행안되면'
 			,content: '<img src="../images/help.png" style="max-width:100%" />'
 			,html:true
 			,placement:'bottom'
-		})
+		})*/
 	
 	var  idx = getParam('idx')
 		,data = {}
