@@ -22,6 +22,13 @@ function onReady() {
 
 // 이벤트
 function initEvent() {
+	// 테스트
+	$('#btnTest').on('click', function(){
+		var param = ''
+		//_oc.link('http://peacekeeper.futuremark.com/run.action', param, 'DEFAULT', 'DEFAULT');
+		_oc.link('http://www.speed-battle.com/index.php', param, 'DEFAULT', 'DEFAULT');
+		
+	})
 	
 	// 인기게임
 	$('#tabList').on('click', function(){

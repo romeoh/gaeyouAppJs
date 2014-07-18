@@ -524,6 +524,7 @@ function cbPostYeyakCommentList(result) {
 		var  str = ''
 			,rdata = result['data']
 		
+		console.log(rdata)
 		replyStart = replyTotal + replyStart;
 		if (rdata.length == 0) {
 			str += '<li class="no-reply">';
@@ -539,10 +540,14 @@ function cbPostYeyakCommentList(result) {
 			str += '</li>';
 			
 			for (var i=rdata.length-1; i>=0; i--) {
-				var regTime = fromNow(rdata[i]['reg_date'])
+				var  regTime = fromNow(rdata[i]['reg_date'])
+					,profile = rdata[i]['story_profile']
 				
+				if (profile == '') {
+					profile = '../images/default.png'
+				}
 				str += '<li data-reply="' + rdata[i]['comment_idx'] + '">';
-				str += '		<p class="profile"><img src="' + rdata[i]['story_profile'] + '" style="height:45px"></p>';
+				str += '		<p class="profile"><img src="' + profile + '" style="height:45px"></p>';
 				str += '	<div class="reply">';
 				
 				str += '		<p class="author">' + decode(rdata[i]['story_nickname']) + '</p>';
