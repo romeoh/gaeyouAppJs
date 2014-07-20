@@ -524,7 +524,7 @@ function cbPostYeyakCommentList(result) {
 		var  str = ''
 			,rdata = result['data']
 		
-		console.log(rdata)
+		//console.log(rdata)
 		replyStart = replyTotal + replyStart;
 		if (rdata.length == 0) {
 			str += '<li class="no-reply">';
@@ -542,7 +542,11 @@ function cbPostYeyakCommentList(result) {
 			for (var i=rdata.length-1; i>=0; i--) {
 				var  regTime = fromNow(rdata[i]['reg_date'])
 					,profile = rdata[i]['story_profile']
-				
+					,nickname = decode(rdata[i]['story_nickname'])
+					
+				if (nickname == '') {
+					nickname = '&nbsp;'
+				}
 				if (profile == '') {
 					profile = '../images/default.png'
 				}
@@ -550,7 +554,7 @@ function cbPostYeyakCommentList(result) {
 				str += '		<p class="profile"><img src="' + profile + '" style="height:45px"></p>';
 				str += '	<div class="reply">';
 				
-				str += '		<p class="author">' + decode(rdata[i]['story_nickname']) + '</p>';
+				str += '		<p class="author">' + nickname + '</p>';
 				str += '		<p class="description">' + decode(rdata[i]['comment']) + '</p>';
 				if (rdata[i]['user_idx'] == getSetting('user_idx')) {
 					str += '		<p class="control">' + regTime + ' | <span data-delReply="' + rdata[i]['comment_idx'] + '">삭제</span></p>';

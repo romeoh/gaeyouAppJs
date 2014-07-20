@@ -1,5 +1,6 @@
 function onReady() {
 	if ($('#intro').length > 0) {
+		//_oc.log("user_idx: " + getSetting('user_idx'));
 		if (getSetting('user_idx')) {
 			getAccessToken();
 			//_oc.link('yeyak/list.html', '', 'CLEAR_TOP', 'DEFAULT');

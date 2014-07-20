@@ -220,13 +220,14 @@ function cbPostYeyakContentTimeline(result) {
 
 /* 보기 */
 function initView() {
-	
+	/*
+	_oc.log('view: '+getSetting('user_idx'))
 	$('#infoNotice')
 		.html('<i class="fa fa-info-circle fa-red"></i> [속도개선] Ver 1.0.4로 업데이트 해주세요.')
 		.on('click', function(){
 			_oc.href('https://play.google.com/store/apps/details?id=com.gaeyou.arcade')
 		})
-		/*.popover({
+		.popover({
 			 title: '게임이 실행안되면'
 			,content: '<img src="../images/help.png" style="max-width:100%" />'
 			,html:true
