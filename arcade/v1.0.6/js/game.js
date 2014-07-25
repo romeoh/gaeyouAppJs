@@ -97,8 +97,11 @@ function cbPostYeyakContentList(result) {
 			,str = ''
 		
 		console.log(rdata)
+		if (getSetting('user_name') == '') {
+			setSetting('user_name', rdata[0]['user_name'])
+		}
 		$('#loading').css('display', 'none');
-		$('#panelCoin').html('<i class="fa fa-bank"></i> 보유코인: ' + rdata[0]['coin'])
+		//$('#panelCoin').html('<i class="fa fa-bank"></i> 보유코인: ' + rdata[0]['coin'])
 		if (rdata.length == 0) {
 			console.log('없음');
 			console.log(rdata)
