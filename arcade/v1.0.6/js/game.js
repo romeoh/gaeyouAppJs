@@ -98,7 +98,7 @@ function cbPostYeyakContentList(result) {
 		
 		console.log(rdata)
 		if (getSetting('user_name') == '') {
-			setSetting('user_name', rdata[0]['user_name'])
+			setSetting('user_name', rdata[0]['story_nickname'])
 		}
 		$('#loading').css('display', 'none');
 		//$('#panelCoin').html('<i class="fa fa-bank"></i> 보유코인: ' + rdata[0]['coin'])
@@ -170,7 +170,10 @@ function cbPostYeyakContentTimeline(result) {
 	if (result['result'] == 'success') {
 		var  rdata = result['data']
 			,str = ''
-			
+		
+		if (getSetting('user_name') == '') {
+			setSetting('user_name', rdata[0]['story_nickname'])
+		}	
 		$('#loading').css('display', 'none');
 		//$('#panelCoin').html('<i class="fa fa-bank"></i> 보유코인: ' + rdata[0]['coin'])
 		
