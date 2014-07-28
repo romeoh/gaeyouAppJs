@@ -502,7 +502,7 @@ function cbPostYeyakContentView(result) {
 			}
 		}
 		$('#condition').html(condition)
-		$('#description').html(rdata['description'])
+		$('#description').html(decode(rdata['description']))
 		
 		if (rdata['type'] == '2') {
 			var  images = rdata['images']
