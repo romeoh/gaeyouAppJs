@@ -166,7 +166,7 @@ function initNew() {
 }
 
 function cbPostYeyakContentTimeline(result) {
-	console.log(result)
+	//console.log(result)
 	if (result['result'] == 'success') {
 		var  rdata = result['data']
 			,str = ''
@@ -196,7 +196,7 @@ function cbPostYeyakContentTimeline(result) {
 				str += '	<div class="text">' + rdata[i]['text'] + '</div>';
 				
 				str += '	<div class="share-box">';
-				str += '		<i class="fa fa-gamepad"></i> ' + rdata[i]['view'];
+				//str += '		<i class="fa fa-gamepad"></i> ' + rdata[i]['view'];
 				str += '		<i class="fa fa-comment"></i> ' + rdata[i]['reply'];
 				str += '		<i class="fa fa-thumbs-up"></i> ' + rdata[i]['good'];
 				str += '		<i class="fa fa-thumbs-down"></i> ' + rdata[i]['bad'];
