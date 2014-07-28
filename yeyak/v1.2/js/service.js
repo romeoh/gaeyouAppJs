@@ -47,7 +47,7 @@ function cbPostYeyakAction(result) {
 			$('#url').html(url)
 		}
 		
-		$('#description').html(rdata['description'])
+		$('#description').html(decode(rdata['description']))
 		
 		var dateInfo = ''
 		dateInfo += '<p class="text-primary">예약한 시간: ' + rdata['reservation_date'] + '</p>';

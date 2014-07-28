@@ -174,7 +174,7 @@ function cbPostYeyakContentList(result) {
 				str += '		<div class="favorite">' + condition + '</div>';
 				str += '	</div>';
 				//str += '	<div class="date"><strong>' + date + '</strong> ' + time + ' ' + condition + '</div>';
-				str += '	<div class="description">' + rdata[i]['description'] + '</div>';
+				str += '	<div class="description">' + decode(rdata[i]['description']) + '</div>';
 				if (rdata[i]['type'] == '2') {
 					str += '	<div class="content-image">';
 					if (rdata[i]['images'][0]['image'].split('.')[1] == 'gif') {
@@ -271,7 +271,7 @@ function cbPostYeyakContentTimeline(result) {
 				str += '		<div class="story-date">' + date + ' ' + time + '</div>';
 				str += '	</div>';
 				//str += '	<div class="date"><strong>' + date + '</strong> ' + time + ' ' + condition + '</div>';
-				str += '	<div class="description">' + rdata[i]['description'] + '</div>';
+				str += '	<div class="description">' + decode(rdata[i]['description']) + '</div>';
 				if (rdata[i]['type'] == '2') {
 					str += '	<div class="content-image">';
 					if (rdata[i]['images'][0]['image'].split('.')[1] == 'gif') {
