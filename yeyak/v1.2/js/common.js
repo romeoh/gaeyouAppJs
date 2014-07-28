@@ -121,7 +121,6 @@ function getRss(url, callback) {
 
 // 텍스트 인코딩
 function decode(txt) {
-	console.log(txt)
 	return decodeURIComponent(txt.replace(/\+/g, '%20'));
 }
 function encode(txt) {

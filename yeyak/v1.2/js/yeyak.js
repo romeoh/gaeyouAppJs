@@ -374,8 +374,8 @@ function cbPostYeyakMemberAccountGet(result) {
 		if ( confirm('"' + rdata['story_nickname'] + '"님의 계정에 바로 등록할까요?') ) {
 			var data = {}
 				,imgs = ''
-			
-			if (viewData['images'].length > 0) {
+			//console.log(viewData['images'])
+			if (viewData['images']) {
 				for (var i in viewData['images']) {
 					if (i != 0) {
 						imgs += ',';
@@ -387,13 +387,14 @@ function cbPostYeyakMemberAccountGet(result) {
 			data['user_idx'] = getSetting('user_idx')
 			data['account_idx'] = getSetting('account_idx')
 			data['type'] = viewData['type']
-			data['description'] = viewData['description']
+			data['description'] = decode(viewData['description']).replace(/\<br\/\>/g, '\n')
 			data['permission'] = viewData['permission']
 			data['image'] = imgs
 			data['url'] = viewData['url']
 			data['reservation_date'] = moment().format('YYYY-MM-DD HH:mm')
 			data['user_agent'] = window.navigator.userAgent
 			data['platform'] = platform
+			//console.log(data)
 			_oc.sendPost('yeyak_reservation', data, 'cbPostYeyakContentInsert');
 		}
 	}
