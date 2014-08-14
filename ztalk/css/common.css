@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+body, p, h1, h2, h3, h4, h5, ul, li, dl, dt, dd, header {margin:0; padding:0; font-family: '나눔고딕',NanumGothic,'맑은 고딕','Malgun Gothic','돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; color:#fff}
+body {margin:0; background:#34495e}
+a {text-decoration:none; cursor:pointer; color:#fff}
+a:hover {text-decoration:none}
+li {list-style:none;}
+.hide {display:none}
+
+
+/* 메트로 UI */
+header {position:fixed; top:0; left:0; right:0; height:70px; background:#F1C100; font-size:20px; z-index:100}
+header .nav-left {position:absolute; top:0px; left:0px; padding:21px; background:#00A206}
+header .nav-left:active {background:#177F6B}
+header .nav-title {padding:10px; text-align:center; font-size:36px}
+header .nav-right {position:absolute; top:0px; right:0px; padding:21px; background:#C01F00}
+header .nav-right:active {background:#722719}
+header .bedge-box {position:relative; top:-5px; left:8px}
+header .bedge-box .bedge {border-radius:100px; background:#fff; color:#34495e; padding:5px 10px; font-weight:bold; font-size:15px;}
+
+.content {margin-top:70px; }
+.content.no-title {margin-top:0px; }
+.content.has-control {margin-bottom:70px}
+.content .list {}
+.content .list.friend-list .description {height:100px; overflow:hidden}
+.content .list li {clear:both; min-height:100px; position:relative}
+.content .list li:nth-child(odd) {background:#00BE99}
+.content .list li:nth-child(even) {background:#006EB6}
+.content .list li:nth-child(odd):active {background:#177F6B}
+.content .list li:nth-child(even):active {background:#1F5C83}
+.content .list li.short {height:100px; overflow:hidden}
+
+.content .list .description {font-size:55px;  padding:7px 0px 0 104px; letter-spacing:-2px}
+.content .list .no-thum .description {padding:25px 0; font-size:30px; text-align:center;}
+
+.content .list .menu .description {font-size:55px; padding-left:10px}
+.content .list .more .description {font-size:63px; text-align:center; background:#34495e; min-height:inherit; padding:0}
+.content .list .menu .description input {background:none; border:none; width:100%}
+.content .list .menu .description input.small {font-size:40px}
+.content .list .friend .thum {position:absolute; top:0px; left:0px}
+.content .list .friend .thum img {width:100px; height:100px}
+.content .list .friend .description {padding:7px 0px 0 110px; overflow:hidden; letter-spacing:-2px}
+.content .list .friend .description.bottle {text-align:right; padding:0; overflow:hidden; height:100px}
+.content .list .friend .description.bottle img {width:100px; height:100px}
+.content .bedge-box {position:absolute; top:3px; right:6px; color:yellow; font-size:25px}
+.content .bedge-message {position:absolute; top:3px; left:6px; color:yellow; font-size:25px}
+
+.content .list .me .thum {position:absolute; top:0px; right:0px}
+.content .list .me .thum img {width:100px; height:100px}
+.content .list .me .description {padding:7px 110px 0 0; text-align:right}
+.content .list .me .description.bottle {text-align:left; padding:0; overflow:hidden; height:100px}
+.content .list .me .description.bottle img {width:100px; height:100px}
+.content .list .me .bedge-box {position:absolute; top:39px; right:14px}
+.content .list .me .bedge-box .bedge {border-radius:100px; background:#fff; color:#34495e; padding:10px}
+.content .list .description .bottle-frame {width:100px; height:100px; display:inline-block; margin:0; background:url('../images/bottle_ani.png') no-repeat; background-size:1300px 200px}
+.content .list .friend .description .bottle-frame {background-position-y:-100px}
+.content .list .friend .description .bottle-frame {position:absolute; left:100px}
+.content .list .me .description .bottle-frame {position:absolute; right:100px}
+
+
+.control {position:fixed; bottom:0px; left:0px; right:0px; background:#1a98bc}
+.control .keys li {float:left; font-size:50px; text-align:center}
+.control .keys li img {width:70px; height:70px}
+.control .keys li:nth-child(1) {background:url('../images/bottle_me.png') center no-repeat #0093BD; height:70px; background-size:70px; 70px}
+.control .keys li:nth-child(2) {background:#00CA56}
+.control .keys li:nth-child(3) {background:#0085DF}
+.control .keys li:nth-child(4) {background:#0049CA}
+.control .keys li:nth-child(5) {background:#00A081}
+.control .keys li:nth-child(6) {background:#EBBC00}
+.control .keys li.disable {background:#34495e; color:#859bb2}
+.control .keys li:nth-child(1).active {background-color:#23778F}
+.control .keys li:nth-child(2).active {background-color:#239252}
+.control .keys li:nth-child(3).active {background-color:#38749C}
+.control .keys li:nth-child(4).active {background-color:#2C6285}
+.control .keys li:nth-child(5).active {background-color:#186D5C}
+.control .keys li:nth-child(6).active {background-color:#A2871F}
+
+.control .bedge-box {position:relative; top:-9px; left:2px}
+.control .bedge-box .bedge {border-radius:100px; background:#fff; color:#34495e; padding:10px; font-weight:bold; font-size:15px;}
+
+/* thumnail bedge */
+.content .list .thum .bedge {position:absolute; bottom:5px; right:5px; border-radius:20px; padding:2px 10px; font-size:20px;}
+.content .list .thum .bedge.level0 {background:#EBBC00}
+.content .list .thum .bedge.level1 {background:#00A081}
+.content .list .thum .bedge.level2 {background:#0049CA}
+.content .list .thum .bedge.level3 {background:#0085DF}
+.content .list .thum .bedge.level4 {background:#00CA56}
+
+.toast {position:fixed; bottom:100px; left:10px; right:10px; z-index:100; font-size:50px; background:#34495e; display:none}
+.toast .message {padding-right:10px}
+.toast .box-control {float:right; }
+.toast .box-control .delete {float:left; font-size:40px; background:#db34c5; padding:7px 15px}
+.toast .box-control .enter {float:left; font-size:40px; background:#f1c40f; padding:7px 15px}
+.toast .box-control .delete.active {background-color:#963689}
+.toast .box-control .enter.active {background-color:#A88D21}
+
+.popup {position:fixed; top:100px; left:10px; right:10px; z-index:100; font-size:50px; background:#34495e; display:none}
+.popup .friend {background:#f1c40f; text-align:center;}
+.popup .friend .close-pop {background:#B94029; float:right; padding:0 15px}
+.popup .message {padding:20px; background:#16a085}
+.popup .message .description {font-size:55px; text-align:center; height:100px; width:80%}
+.popup .message .description .bottle-frame {width:100px; height:100px; display:inline-block; margin:0; background:url('../images/bottle_ani.png') no-repeat; background-size:1300px 200px; background-position-y:-100px}
+.popup .message .description .bottle-frame {position:absolute; left:0px}
+.popup .message.info {font-size:30px}
+
+.jumbotron,
+.jumbotron p {background:#fff; color:#000}
+
+
+
+
+
