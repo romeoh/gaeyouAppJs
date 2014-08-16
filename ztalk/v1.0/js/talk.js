@@ -32,7 +32,14 @@ function onReady() {
 		var keyWidth = winWidth / 6
 		$('.keys li').css('width', keyWidth + 'px');
 		
-		initTalk();
+		var friendIdx = getParam('idx')
+		if (friendIdx == '0' || friendIdx == '' || !friendIdx) {
+			_oc.toast('잘못된 접근입니다.');
+			_oc.back();
+			return false;
+		} else {
+			initTalk();
+		}
 	}
 	
 	/* 설정 */
@@ -415,6 +422,12 @@ function delKey() {
 
 // 메세지 전송
 function sendMessage() {
+	var friendIdx = getParam('idx')
+	if (friendIdx == '0' || friendIdx == '' || !friendIdx) {
+		_oc.toast('메세지를 전송하지 못했습니다.');
+		_oc.back();
+		return false;
+	}
 	if (message.length == 0) {
 		$('#toast').css('display', 'none');
 		_oc.toast('메세지를 입력하세요.');
