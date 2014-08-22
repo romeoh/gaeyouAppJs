@@ -151,20 +151,20 @@ function showSns() {
 	str += '	<div class="modal-content">';
 	str += '		<div class="modal-header">';
 	str += '			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-	str += '			<h4 class="modal-title" id="modalLabel">친구가 많으면 훨씬 재미있어요.</h4>';
+	str += '			<h4 class="modal-title" id="modalLabel">' + i18n.t("message.snsTitle") + '</h4>';
 	str += '		</div>';
 	str += '		<div class="modal-body" id="modalContent">';
 	
 	str += '<ul class="form-group group-movie-input">';
-	str += '	<li data-sns="0"><span class="sns0"></span>카카오스토리</li>';
-	str += '	<li data-sns="1"><span class="sns1"></span>카카오톡</li>';
-	//str += '	<li data-sns="2"><span class="sns2"></span>페이스북</li>';
-	//str += '	<li data-sns="3"><span class="sns3"></span>트위터</li>';
-	str += '	<li data-sns="4"><span class="sns4"></span>라인</li>';
-	str += '	<li data-sns="5"><span class="sns5"></span>밴드</li>';
-	str += '	<li data-sns="6"><span class="sns6"></span>마이피플</li>';
-	//str += '	<li data-sns="7"><span class="sns7"></span>지메일</li>';
-	str += '	<li data-sns="8"><span class="sns8"></span>공유</li>';
+	str += '	<li data-sns="0"><span class="sns0"></span>' + i18n.t("message.sns0") + '</li>';
+	str += '	<li data-sns="1"><span class="sns1"></span>' + i18n.t("message.sns1") + '</li>';
+	//str += '	<li data-sns="2"><span class="sns2"></span>' + i18n.t("message.sns2") + '</li>';
+	//str += '	<li data-sns="3"><span class="sns3"></span>' + i18n.t("message.sns3") + '</li>';
+	str += '	<li data-sns="4"><span class="sns4"></span>' + i18n.t("message.sns4") + '</li>';
+	str += '	<li data-sns="5"><span class="sns5"></span>' + i18n.t("message.sns5") + '</li>';
+	str += '	<li data-sns="6"><span class="sns6"></span>' + i18n.t("message.sns6") + '</li>';
+	//str += '	<li data-sns="7"><span class="sns7"></span>' + i18n.t("message.sns7") + '</li>';
+	str += '	<li data-sns="8"><span class="sns8"></span>' + i18n.t("message.sns8") + '</li>';
 	str += '</ul>';
 	
 	str += '</div>';

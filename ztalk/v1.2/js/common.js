@@ -39,7 +39,8 @@ function initDefault() {
 		_oc.link('../setting', '', 'CLEAR_TOP', 'DEFAULT');
 	})
 	
-	i18n.init(function(t) {
+	var option = {fallbackLng: 'en'};
+	i18n.init(option, function(t) {
 		// translate nav
 		$("body").i18n();
 		
