@@ -188,11 +188,11 @@ function showSns() {
 
 // sns 공ㅇ
 function shareSns(idx) {
-	var  id = 'ㅋ톡'
+	var  id = i18n.t("app.name")
 		,ver = '1.0'
-		,app = '[ㅋ톡] 관심병을 던져라'
-		,post = 'ㅋ톡에서 기다리고 있을께요.\n\n' + shotStore
-		,title = '친구에게 매일 ㅋㅋㅋㅋ를 보내세요.'
+		,app = i18n.t("app.app")
+		,post = i18n.t("app.post") + '\n\n' + shotStore
+		,title = i18n.t("app.title")
 		,desc = ''
 		,img = 'http://ztalk.gaeyou.com/m/images/icon_512.png'
 		
