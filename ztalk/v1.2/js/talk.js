@@ -32,6 +32,7 @@ function onReady() {
 	if ($('#talk').length > 0) {
 		var keyWidth = winWidth / 6
 		$('.keys li').css('width', keyWidth + 'px');
+		$('[data-keypad="5"]').html('ㅅ');
 		
 		var friendIdx = getParam('idx')
 		if (friendIdx == '0' || friendIdx == '' || !friendIdx) {
@@ -377,7 +378,7 @@ function cbPostMessageList(result) {
 			if (rdata[i]['bottle'] == '1') {
 				str += '    <p class="description bottle"><img src="../images/bottle_' + classFlag + '.png" ></p>';
 			} else {
-				str += '    <p class="description">' + rdata[i]['message'] + '</p>';
+				str += '    <p class="description">' + rdata[i]['message'].replace(/ㅗ/g, 'ㅅ') + '</p>';
 			}
 			if (rdata[i]['was_view'] == '0') {
 				//str += '    <p class="bedge-message"><i class="fa fa-eye-slash"></i></p>';
@@ -544,7 +545,7 @@ function getKey(idx) {
 	}
 	if (idx == '5') {
 		if (getSetting('user_level') <= 0) {
-			return 'ㅗ';
+			return 'ㅅ';
 		}
 		return false;
 	}
